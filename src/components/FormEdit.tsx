@@ -8,20 +8,12 @@ import { FormData } from "../types/FormData";
 import style from '../global.module.css'
 export interface Iprops{
   open:boolean,
-  setOpens: (param:boolean)=>void
+  setOpens: any
 }
 export default function FormEdit({open, setOpens}:Iprops) {
   const dispatch = useDispatch()
   let { id } = useParams();  
   const dataEdit = useSelector((state:any) => state.User.getUser);
-
-  // const handleSelectChange = (event: SelectChangeEvent) => {
-  //   const { name, value } = event.target;
-  //   setValues({ ...values, [name]: value });
-  //   onFormChange(name, value);
-  // };
-
-  //let navigate = useNavigate();
 
   useEffect(()=>{
     
