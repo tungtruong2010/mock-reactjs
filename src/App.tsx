@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import Header from './components/Header';
-import Table from './components/Table';
-import {BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Respo1 from './pages/respo1';
-import { Provider } from 'react-redux';
-import store from "./redux/store";
 import { combineReducers, createStore } from 'redux';
 import { User } from './redux/reducer/reducer';
 function App() {

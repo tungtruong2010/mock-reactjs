@@ -2,10 +2,9 @@ import React from "react";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, editUser, getAUser } from "../redux/action/userAction";
+import { addUser, editUser } from "../redux/action/userAction";
 import { v4 as uuid } from 'uuid';
-import { useNavigate, useParams } from "react-router-dom";
-import { FormData } from "../types/FormData";
+import { useParams } from "react-router-dom";
 import style from '../global.module.css'
 export interface Iprops{
   open:boolean,

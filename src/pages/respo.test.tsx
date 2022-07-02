@@ -1,21 +1,24 @@
-import { render, fireEvent, screen, cleanup } from "@testing-library/react";
+import { cleanup } from "@testing-library/react";
 import { Provider } from "react-redux";
-import Respo1 from './respo1';
-import Home from './Home'
-import store from "../redux/store";
-import { mount, shallow } from 'enzyme'; 
+import { mount } from 'enzyme'; 
 import { BrowserRouter } from "react-router-dom";
 import configureStore from 'redux-mock-store';
 import FormEdit from "../components/FormEdit";
-import EditIcon from '@mui/icons-material/Edit';
 import React from "react";
+import { Button } from "@mui/material";
 
 afterEach(cleanup)
 
 describe('test respo  ', () =>{
     const mockStore = configureStore();
     let state = {
-        User: { getUser: {} }
+        User: { getUser: {id: "1861402",
+        name: "",
+        description: "",
+        language: "",
+        watchers_count: "",
+        open_issues: "",
+        private:"",} }
     };
     const store = mockStore(() => state);
 
@@ -30,4 +33,16 @@ describe('test respo  ', () =>{
       console.log()
       expect(wrapper.html()).toEqual('')
     });
+    it('test Edit', () => {
+      const mockCallBack = jest.fn();
+      const buttonEdit = mount(<Button onClick={mockCallBack(state.User.getUser.id)}>
+        Update
+      </Button>);
+        buttonEdit.find('button').simulate('click');
+      const buttonSave = mount(<Button onClick={mockCallBack(state.User)}>
+        Save
+      </Button>);
+        buttonSave.find('button').simulate('click');
+        expect(mockCallBack).toBeCalledTimes(2);
+      })
 })

@@ -1,10 +1,10 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, InputLabel, MenuItem, Select, TextField } from "@mui/material";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../redux/action/userAction";
-import { v4 as uuid } from 'uuid';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import style from '../global.module.css'
+import { v4 as uuid } from 'uuid';
+import style from '../global.module.css';
+import { addUser } from "../redux/action/userAction";
 import { Iprops } from "./FormEdit";
 export default function FormAdd({open, setOpens}:Iprops) {
   const dispatch = useDispatch();

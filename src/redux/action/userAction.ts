@@ -8,13 +8,13 @@ export const ADD_USER = "ADD_USER";
 export const SEARCH_USER = "SEARCH_USER";
 export const SORT_USER = "SORT_USER";
 
-export const getUser = (data:any) => {
+export const getUser = (data:object) => {
   return {
     type: GET_DATA_USER,
     payload: data,
   };
 };
-export const editUser = (data:any) => {
+export const editUser = (data:object) => {
   return {
     type: EDIT_USER,
     payload: data,
@@ -26,33 +26,21 @@ export const deleteUser = (data:number) => {
     payload: data,
   };
 };
-export const searchUser = (data:any) => {
-  return {
-    type: SEARCH_USER,
-    payload: data,
-  };
-};
-export const sortUser = (data:any) => {
-  return {
-    type: SORT_USER,
-    payload: data,
-  };
-};
-export const addUser = (data:any) => {
+export const addUser = (data:object) => {
   return {
     type: ADD_USER,
     payload: data,
   };
 };
-export const getAUser = (id:any) => {
+export const getAUser = (id:number|string) => {
   return {
     type: GET_A_USER,
     payload: id,
   };
 };
-export const getUserThunk = () => async (dispatch:any) => {
+export const getUserThunk = () => async (dispatch:Function) => {
   try{
-    const res = await axios.get<any>("https://api.github.com/users/defunkt/repos");
+    const res = await axios.get<Function>("https://api.github.com/users/defunkt/repos");
     const data = res.data;
     dispatch(getUser(data));
   }catch(err){
