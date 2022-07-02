@@ -15,18 +15,19 @@ afterEach(cleanup)
 describe('test respo  ', () =>{
     const mockStore = configureStore();
     let state = {
-        open: true,
-        setOpens: true
+        User: { getUser: {} }
     };
     const store = mockStore(() => state);
+
     it('test Show Update Dialog', () => {
-        const wrapper = mount(
-            <Provider store={store}>
-              <BrowserRouter>
-                <FormEdit open={true} setOpens={true}/>
-              </BrowserRouter>
-            </Provider>
-        )
-        expect(wrapper).toMatchSnapshot();
+      const wrapper = mount(
+          <Provider store={store}>
+            <BrowserRouter>
+              <FormEdit open={false} setOpens={() => {}}/>
+            </BrowserRouter>
+          </Provider>
+      )
+      console.log()
+      expect(wrapper.html()).toEqual('')
     });
 })
