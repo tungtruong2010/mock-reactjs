@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuid } from 'uuid';
 import style from '../global.module.css';
 import { addUser } from "../redux/action/userAction";
+import React from "react";
 import { Iprops } from "./FormEdit";
 export default function FormAdd({open, setOpens}:Iprops) {
   const dispatch = useDispatch();

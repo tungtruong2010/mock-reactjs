@@ -8,12 +8,14 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import * as React from "react";
+//import * as React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, getAUser, getUserThunk } from "../redux/action/userAction";
 import FormAdd from './FormAdd';
 import FormEdit from './FormEdit';
+import React from "react";
+
 
 export default function MainTable() {
   const dispatch = useDispatch();
@@ -70,11 +72,11 @@ export default function MainTable() {
               <TableCell component="th" scope="row" style={{borderBottom: "unset"}}>
                 {data.id}
               </TableCell>
-              <TableCell component="th" scope="row" style={{borderBottom: "unset"}}>
+              <TableCell id={data?.name} component="th" scope="row" style={{borderBottom: "unset"}}>
                 {data?.name}
               </TableCell>
               <TableCell align="center" style={{borderBottom: "unset"}}>{data.description}</TableCell>
-              <TableCell align="center" style={{borderBottom: "unset"}}>{data.language}</TableCell>
+              <TableCell id={data?.language} align="center" style={{borderBottom: "unset"}}>{data.language}</TableCell>
               <TableCell align="center" style={{borderBottom: "unset"}}>{data.watchers_count}</TableCell>
               <TableCell align="center" style={{borderBottom: "unset"}}>{data.open_issues}</TableCell>
               <TableCell align="center" style={{borderBottom: "unset"}}>{data.private.toString()}</TableCell>

@@ -18,13 +18,13 @@ export default function FormEdit({open, setOpens}:Iprops) {
   useEffect(()=>{
     
     setDataAdd({
-      id: dataEdit.id,
-      name: dataEdit.name,
-      description: dataEdit.description,
-      language: dataEdit.language,
-      watchers_count: dataEdit.watchers_count,
-      open_issues: dataEdit.open_issues,
-      private: dataEdit.private
+      id: dataEdit?.id,
+      name: dataEdit?.name,
+      description: dataEdit?.description,
+      language: dataEdit?.language,
+      watchers_count: dataEdit?.watchers_count,
+      open_issues: dataEdit?.open_issues,
+      private: dataEdit?.private
     })
   },[dataEdit]);
  
